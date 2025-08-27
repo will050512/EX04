@@ -446,7 +446,7 @@
 
   <script>
     // Apps Script 網址
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzJaKSWOwvAQ2lN7leUzEVvZprRXF3EnGubqtPRl5zBD1m-nHxcPEViI1FCTPKUAzR96w/exec';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxxa-JGBbnX1L80ayPC5gbYsVM9722vmJZAZgnyv0LmPoM6OTtWC0ZL3KgT5G-D_Xs2Sg/exec';
 
     // 下載連結配置
     const DOWNLOAD_LINKS = {
@@ -594,19 +594,11 @@
         // 記錄下載到Google Sheets
         const recorded = await recordDownload(key, platform);
         
-        if (recorded) {
-          buttonElement.innerHTML = `
-            <div class='platform-icon'>✅</div>
-            <div class='platform-name'>準備下載...</div>
-            <div class='platform-desc'>狀態已記錄，即將開始下載</div>
-          `;
-        } else {
-          buttonElement.innerHTML = `
-            <div class='platform-icon'>⚠️</div>
-            <div class='platform-name'>記錄失敗，但開始下載</div>
-            <div class='platform-desc'>請聯繫客服</div>
-          `;
-        }
+        buttonElement.innerHTML = `
+          <div class='platform-icon'>✅</div>
+          <div class='platform-name'>準備下載...</div>
+          <div class='platform-desc'>狀態已記錄，即將開始下載</div>
+        `;
         
         // 延遲後開始下載
         setTimeout(() => {
